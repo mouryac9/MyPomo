@@ -58,7 +58,7 @@ var frame by Delegates.notNull<Chronometer>()
         val bool = args.bool
         val time = args.finaltime
         val task = args.task
-       // binding.textView10.text  = "akshat"
+       binding.textView10.text  = task
         min  = time[0].toString() + time[1].toString()
         sec = (time[3].toString()) + (time[4].toString())
 

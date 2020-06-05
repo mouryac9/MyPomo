@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.android.mypomo.databinding.ActivityMainBinding
 import com.example.android.mypomo.databinding.FragmentCompleteBinding
-import com.example.android.mypomo.databinding.FragmentTiktockBinding
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
