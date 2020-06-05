@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">My Pomo</string>
+    <string name="heading">POMODORO TIMER</string>
+    <string name="starting">Increase focus with this pomodoro timer!!</string>
+    <string name="letsGo">Let\'s Go!!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="time">Set the pomodoro timer-</string>
+    <string name="work">Set the task to be done-</string>
+    <string name="set">SET</string>
+    <string name="com">Yay!! You completed the task!</string>
+    <string name="redo">SKIP BREAK</string>
+    <string name="breaks">TAKE A BREAK</string>
+    <string name="taket">Set time for break-</string>
+    <string name="enjoy">ENJOY!!</string>
+    <string name="breakover">"BREAK OVER. "</string>
+    <string name="back">GET BACK TO WORK</string>
+    <string name="stop">Stop Timer</string>
+    <string name="working">Started</string>
+    <string name="stopped">Stopped</string>
+
+    <string name="start">Start Timer</string>
+    <string name="title">My Pomo</string>
+    <string name="head">About the App</string>
+    <string name="bod">"My Pomo app is entirely based on the Pomodoro Method. This minimalistic and simple pomodoro timer helps you do more in less time and regain your lost concentration. The pomodoro method is popular time management method developed in 80's. You simply break down your task into small periods of time with short breaks in between."</string>
+    <string name="about1">About</string>
+    <string name="breakover1">Break Over!</string>
+    <string name="breaktime1">Take A Break</string>
+    <string name="complete1">Task Completed!</string>
+    <string name="starter1">My Pomo</string>
+    <string name="tiktock1">Timer</string>
+    <string name="timer1">Set Time</string>
+    <string name="blank">"  "</string>
+</resources>

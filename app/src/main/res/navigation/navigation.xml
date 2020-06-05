@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/starter">
+    <fragment
+        android:id="@+id/timer"
+        android:name="com.example.android.mypomo.timer"
+        android:label="timer"
+        tools:layout="@layout/fragment_timer">
+        <action
+            android:id="@+id/action_timer_to_tiktock"
+            app:destination="@id/tiktock" />
+    </fragment>
+    <fragment
+        android:id="@+id/starter"
+        android:name="com.example.android.mypomo.starter"
+        android:label="starter"
+        tools:layout="@layout/fragment_starter">
+        <action
+            android:id="@+id/action_starter_to_timer"
+            app:destination="@id/timer" />
+        <action
+            android:id="@+id/action_starter_to_about"
+            app:destination="@id/about" />
+    </fragment>
+    <fragment
+        android:id="@+id/tiktock"
+        android:name="com.example.android.mypomo.tiktock"
+        android:label="tiktock"
+        tools:layout="@layout/fragment_tiktock">
+        <action
+            android:id="@+id/action_tiktock_to_timer"
+            app:destination="@id/timer" />
+        <argument
+            android:name="finaltime"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tiktock_to_complete"
+            app:destination="@id/complete"
+            app:popUpTo="@id/timer" />
+        <argument
+            android:name="bool"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_tiktock_to_breakover"
+            app:destination="@id/breakover" />
+        <argument
+            android:name="task"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/complete"
+        android:name="com.example.android.mypomo.complete"
+        android:label="complete"
+        tools:layout="@layout/fragment_complete">
+        <action
+            android:id="@+id/action_complete_to_timer"
+            app:destination="@id/timer" />
+        <action
+            android:id="@+id/action_complete_to_breaktime"
+            app:destination="@id/breaktime" />
+    </fragment>
+    <fragment
+        android:id="@+id/breaktime"
+        android:name="com.example.android.mypomo.breaktime"
+        android:label="breaktime"
+        tools:layout="@layout/fragment_breaktime">
+        <action
+            android:id="@+id/action_breaktime_to_tiktock"
+            app:destination="@id/tiktock" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakover"
+        android:name="com.example.android.mypomo.breakover"
+        android:label="breakover"
+        tools:layout="@layout/fragment_breakover">
+        <action
+            android:id="@+id/action_breakover_to_timer"
+            app:destination="@id/timer" />
+    </fragment>
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.android.mypomo.About"
+        android:label="About"
+        tools:layout="@layout/fragment_about"/>
+</navigation>
