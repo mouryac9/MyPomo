@@ -18,25 +18,28 @@
             android:layout_height="wrap_content"
             android:text="@string/taket"
             android:textColor="@android:color/black"
-            android:textSize="30sp"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.472"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.163" />
+            app:layout_constraintVertical_bias="0.227" />
 
         <EditText
             android:id="@+id/editTextTime"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_marginTop="88dp"
+            android:background="#FFFFFF"
             android:ems="10"
             android:hint="mm:ss"
             android:inputType="time"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -46,11 +49,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="100dp"
+            android:background="@drawable/btn"
             android:text="@string/enjoy"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="42dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="88dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTime"
+            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:srcCompat="@drawable/ic_action_name" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
 </layout>

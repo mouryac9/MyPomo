@@ -1,14 +1,17 @@
 package com.example.android.mypomo
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.android.mypomo.databinding.FragmentTimerBinding
+import kotlinx.android.synthetic.main.fragment_timer.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,6 +45,8 @@ class timer : Fragment() {
                 inflater,
                 R.layout.fragment_timer, container, false
             )
+            //editTextTime2.hideKeyboard()
+
              var time: String
            binding.setButton.setOnClickListener{
             time= binding.editTextTime2.text.toString()
@@ -54,7 +59,12 @@ class timer : Fragment() {
             return binding.root
         }
 
-        companion object {
+   // fun View.hideKeyboard() {
+     //   val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+       // imm.hideSoftInputFromWindow(windowToken, 0)
+  //  }
+
+    companion object {
             /**
              * Use this factory method to create a new instance of
              * this fragment using the provided parameters.

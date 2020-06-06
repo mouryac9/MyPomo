@@ -15,26 +15,32 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
             android:fontFamily="@font/adamina"
             android:text="@string/head"
-            android:textColor="@color/design_default_color_primary_dark"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHighlight="@android:color/holo_blue_bright"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            android:textSize="38sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView9"
+            style="@style/normaltext"
             android:layout_width="333dp"
             android:layout_height="wrap_content"
+            android:elegantTextHeight="true"
+            android:lineSpacingExtra="8sp"
             android:text="@string/bod"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/normaltext" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
 </layout>

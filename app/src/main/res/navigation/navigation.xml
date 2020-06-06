@@ -20,7 +20,8 @@
         tools:layout="@layout/fragment_starter">
         <action
             android:id="@+id/action_starter_to_timer"
-            app:destination="@id/timer" />
+            app:destination="@id/timer"
+            app:popUpTo="@id/starter" />
         <action
             android:id="@+id/action_starter_to_about"
             app:destination="@id/about" />
@@ -45,7 +46,8 @@
             app:argType="boolean" />
         <action
             android:id="@+id/action_tiktock_to_breakover"
-            app:destination="@id/breakover" />
+            app:destination="@id/breakover"
+            app:popUpTo="@id/timer" />
         <argument
             android:name="task"
             app:argType="string" />
