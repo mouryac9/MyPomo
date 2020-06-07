@@ -34,14 +34,14 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="64dp"
                 android:fontFamily="@font/adamina"
                 android:text="@string/time"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.561"
+                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,7 +60,7 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextTime2"
-                app:layout_constraintVertical_bias="0.224" />
+                app:layout_constraintVertical_bias="0.138" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -91,7 +91,7 @@
             <EditText
                 android:id="@+id/mourya"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="92dp"
                 android:ems="10"
                 android:hint="Task"
@@ -99,7 +99,7 @@
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.639"
+                app:layout_constraintHorizontal_bias="0.646"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 

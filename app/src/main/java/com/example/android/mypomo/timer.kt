@@ -1,86 +1,83 @@
 package com.example.android.mypomo
 
+import android.R
+import android.app.Activity
 import android.content.Context
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.android.mypomo.databinding.FragmentTimerBinding
-import kotlinx.android.synthetic.main.fragment_timer.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [timer.newInstance] factory method to
- * create an instance of this fragment.
- */
 class timer : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
 
     private lateinit var binding: FragmentTimerBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            val binding = DataBindingUtil.inflate<FragmentTimerBinding>(
-                inflater,
-                R.layout.fragment_timer, container, false
-            )
-            //editTextTime2.hideKeyboard()
 
-             var time: String
-           binding.setButton.setOnClickListener{
-            time= binding.editTextTime2.text.toString()
-            val task = "Task: ${binding.mourya.text}"
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = DataBindingUtil.inflate(
+            inflater,
+            com.example.android.mypomo.R.layout.fragment_timer, container, false
+        )
+ val timeedit = binding.editTextTime2
+        val taskedit = binding.mourya
 
-               view?.findNavController()
-                   ?.navigate(timerDirections.actionTimerToTiktock(time, true, task))
+
+        binding.setButton.setOnClickListener {
+            val time = timeedit.text.toString()
+            val op = taskedit.text.toString()
+
+            val task = "Task: $op"
+            if (time.isEmpty()) {
+                timeedit.error = "Please enter time!"
             }
-            (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.timer1)
-            return binding.root
-        }
+            if (op.isEmpty()) {
+                taskedit.error = "Please enter task!"
+            }
+           // if (check(time)) {
+             //   timeedit.error = "Please enter time according to the given format."
+        //    }
+        else {
+                 hideKeyboard()
 
-   // fun View.hideKeyboard() {
-     //   val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-       // imm.hideSoftInputFromWindow(windowToken, 0)
-  //  }
-
-    companion object {
-            /**
-             * Use this factory method to create a new instance of
-             * this fragment using the provided parameters.
-             *
-             * @param param1 Parameter 1.
-             * @param param2 Parameter 2.
-             * @return A new instance of fragment timer.
-             */
-            // TODO: Rename and change types and number of parameters
-            @JvmStatic
-            fun newInstance(param1: String, param2: String) =
-                timer().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+                view?.findNavController()
+                    ?.navigate(timerDirections.actionTimerToTiktock(time, true, task))
+            }
         }
+        (activity as AppCompatActivity).supportActionBar?.title = "Set Time"
+        return binding.root
     }
+
+
+}
+
+fun Fragment.hideKeyboard() {
+    view?.let { activity?.hideKeyboard(it) }
+}
+
+fun Activity.hideKeyboard() {
+    hideKeyboard(currentFocus ?: View(this))
+}
+
+fun Context.hideKeyboard(view: View) {
+    val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+    inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+}
+
+fun check(time: String): Boolean {
+    val timtim = arrayOf(time.split(":").toString())
+
+    return !(time[2].toString() == ":" && timtim[0].toInt() < 60 && timtim[1].toInt() < 60)
+}

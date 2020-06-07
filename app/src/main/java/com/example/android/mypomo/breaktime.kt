@@ -41,10 +41,13 @@ class breaktime : Fragment() {
         var time="00:00"
         binding.enjoyButton.setOnClickListener{
             time= binding.editTextTime.text.toString()
-
+            if( time.isEmpty() ){
+                binding.editTextTime.error = "Please enter time!"
+            }
+            else {
             view?.findNavController()
-                ?.navigate(breaktimeDirections.actionBreaktimeToTiktock(time, false, " "))
-        }
+                ?.navigate(breaktimeDirections.actionBreaktimeToTiktock(time, false, "Break time!!"))
+        }}
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.breaktime1)
         return binding.root    }
 

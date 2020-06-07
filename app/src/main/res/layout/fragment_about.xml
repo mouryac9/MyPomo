@@ -15,7 +15,6 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
             android:fontFamily="@font/adamina"
             android:text="@string/head"
             android:textAlignment="center"
@@ -24,6 +23,7 @@
             android:textColorHighlight="@android:color/holo_blue_bright"
             android:textSize="38sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,14 +33,14 @@
             style="@style/normaltext"
             android:layout_width="333dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="68dp"
             android:elegantTextHeight="true"
             android:lineSpacingExtra="8sp"
             android:text="@string/bod"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
 </layout>
