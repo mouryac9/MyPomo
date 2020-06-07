@@ -13,6 +13,19 @@
         android:focusable="auto">
 
         <TextView
+            android:id="@+id/textView12"
+            style="@style/timeview"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text=":"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,19 +41,16 @@
 
         <EditText
             android:id="@+id/editTextTime"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_marginTop="88dp"
-            android:background="#FFFFFF"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
             android:ems="10"
-            android:hint="mm:ss"
+            android:hint="mm"
             android:inputType="time"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.452"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView12"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Button
@@ -64,10 +74,21 @@
             android:layout_marginTop="88dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintEnd_toStartOf="@+id/editTextTime"
-            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             app:srcCompat="@drawable/ic_action_name" />
+
+        <EditText
+            android:id="@+id/editTextTime4"
+            style="@style/timeview"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="ss"
+            android:inputType="time"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editTextTime"
+            app:layout_constraintStart_toEndOf="@+id/textView12" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
 </layout>

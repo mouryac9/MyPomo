@@ -16,19 +16,13 @@
 
             <EditText
                 android:id="@+id/editTextTime2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="92dp"
-                android:ems="10"
-                android:hint="mm:ss"
-                android:inputType="time"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.699"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                style="@style/timeview"
+                android:layout_width="80dp"
+                android:layout_marginTop="96dp"
+                android:hint="mm"
+                app:layout_constraintEnd_toStartOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                android:nextFocusRight="@id/editTextTime3"/>
 
             <TextView
                 android:id="@+id/textView2"
@@ -66,11 +60,12 @@
                 android:id="@+id/imageView3"
                 android:layout_width="43dp"
                 android:layout_height="49dp"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="92dp"
                 android:background="@color/colorPrimaryDark"
                 android:contentDescription="@string/app_name"
                 android:src="@android:drawable/checkbox_on_background"
                 app:layout_constraintEnd_toStartOf="@+id/mourya"
+                app:layout_constraintHorizontal_bias="0.441"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -107,14 +102,41 @@
                 android:id="@+id/imageView4"
                 android:layout_width="49dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="92dp"
+                android:layout_marginTop="104dp"
                 android:background="#FFFFFF"
                 android:backgroundTint="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toStartOf="@+id/editTextTime2"
-                app:layout_constraintHorizontal_bias="0.477"
+                app:layout_constraintHorizontal_bias="0.26"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
                 app:srcCompat="@drawable/ic_baseline_access_alarm_24" />
+
+            <EditText
+                android:id="@+id/editTextTime3"
+                style="@style/timeview"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="96dp"
+                android:ems="10"
+                android:hint="ss"
+                android:inputType="time"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView13"
+                style="@style/timeview"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="96dp"
+                android:text=":"
+                android:textColor="@android:color/background_dark"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

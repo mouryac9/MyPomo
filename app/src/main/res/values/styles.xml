@@ -24,4 +24,15 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="timeview">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">92dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:inputType">time</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>

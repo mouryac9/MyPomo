@@ -3,7 +3,6 @@ package com.example.android.mypomo
 import android.R
 import android.app.Activity
 import android.content.Context
-import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,29 +30,38 @@ class timer : Fragment() {
             inflater,
             com.example.android.mypomo.R.layout.fragment_timer, container, false
         )
- val timeedit = binding.editTextTime2
+        val minedit = binding.editTextTime2
+        val secedit = binding.editTextTime3
         val taskedit = binding.mourya
 
 
         binding.setButton.setOnClickListener {
-            val time = timeedit.text.toString()
-            val op = taskedit.text.toString()
-
-            val task = "Task: $op"
-            if (time.isEmpty()) {
-                timeedit.error = "Please enter time!"
+            val task = "Task: ${taskedit.text}"
+            if (minedit.text.toString().isEmpty() ) {
+                minedit.error = "Please enter valid time!"
             }
-            if (op.isEmpty()) {
+            if (secedit.text.toString().isEmpty() ) {
+                secedit.error = "Please enter valid time!"
+            }
+            if (taskedit.text.toString().isEmpty()) {
                 taskedit.error = "Please enter task!"
-            }
-           // if (check(time)) {
-             //   timeedit.error = "Please enter time according to the given format."
-        //    }
+           }
         else {
-                 hideKeyboard()
+                hideKeyboard()
 
                 view?.findNavController()
-                    ?.navigate(timerDirections.actionTimerToTiktock(time, true, task))
+                    ?.navigate(
+                        timerDirections.actionTimerToTiktock(
+                            true,
+                            task,
+                            minedit.text.toString().toInt(),
+                            secedit.text.toString().toInt()
+
+                        )
+                    )
+                minedit.text=null
+                secedit.text=null
+                taskedit.text=null
             }
         }
         (activity as AppCompatActivity).supportActionBar?.title = "Set Time"
@@ -67,17 +75,11 @@ fun Fragment.hideKeyboard() {
     view?.let { activity?.hideKeyboard(it) }
 }
 
-fun Activity.hideKeyboard() {
-    hideKeyboard(currentFocus ?: View(this))
-}
 
 fun Context.hideKeyboard(view: View) {
     val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 }
 
-fun check(time: String): Boolean {
-    val timtim = arrayOf(time.split(":").toString())
 
-    return !(time[2].toString() == ":" && timtim[0].toInt() < 60 && timtim[1].toInt() < 60)
-}
+
